@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Платформа для изучения CI/CD и автоматизации развертывания: GitHub Actions, GitLab CI, Jenkins, ArgoCD"
+    />
+    <title>CI/CD Platform | Автоматизация развертывания</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.20.2/dist/css/uikit.min.css"
+    />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.20.2/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.20.2/dist/js/uikit-icons.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </head>
+  <body>
+    <header class="uk-header" role="banner">
+      <nav
+        class="uk-navbar-container uk-navbar-transparent"
+        uk-navbar
+        role="navigation"
+        aria-label="Главная навигация"
+      >
+        <div
+          class="uk-container uk-grid uk-flex-middle uk-container-large"
+          style="margin: 0 auto"
+        >
+          <div class="uk-navbar-left">
+            <a
+              href="index.html"
+              class="uk-navbar-item uk-logo"
+              aria-label="На главную"
+            >
+              <span class="uk-margin-small-left uk-text-bold"
+                >CI/CD Platform</span
+              >
+            </a>
+          </div>
+
+          <div class="uk-navbar-right uk-visible@m">
+            <ul class="uk-navbar-nav">
+              <li class="uk-active"><a href="index.html">Главная</a></li>
+              <li><a href="html/tools.html">Инструменты</a></li>
+              <li><a href="html/features.html">Возможности</a></li>
+              <li><a href="html/pipeline.html">Pipeline</a></li>
+              <li><a href="html/contacts.html">Контакты</a></li>
+            </ul>
+
+            <button
+              class="uk-button uk-button-default uk-margin-left theme-toggle"
+              aria-label="Переключить тему"
+              aria-pressed="false"
+            >
+              <span class="theme-icon">🌙</span>
+            </button>
+          </div>
+
+          <div class="uk-navbar-right uk-hidden@m">
+            <button
+              class="uk-button uk-button-default theme-toggle-mobile"
+              aria-label="Переключить тему"
+            >
+              <span class="theme-icon">🌙</span>
+            </button>
+
+            <a
+              href="#mobile-menu"
+              class="uk-navbar-toggle"
+              uk-navbar-toggle-icon
+              uk-toggle
+              aria-label="Открыть меню"
+            ></a>
+          </div>
+        </div>
+      </nav>
+
+      <div
+        id="mobile-menu"
+        uk-offcanvas="overlay: true"
+        role="dialog"
+        aria-label="Мобильное меню"
+      >
+        <div class="uk-offcanvas-bar">
+          <button
+            class="uk-offcanvas-close"
+            type="button"
+            uk-close
+            aria-label="Закрыть меню"
+          ></button>
+          <ul class="uk-nav uk-nav-default">
+            <li class="uk-active"><a href="index.html">Главная</a></li>
+            <li><a href="html/tools.html">Инструменты</a></li>
+            <li><a href="html/features.html">Возможности</a></li>
+            <li><a href="html/pipeline.html">Pipeline</a></li>
+            <li><a href="html/contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main role="main">
+      <section
+        class="uk-section uk-section-large hero-section"
+        aria-label="Главный баннер"
+      >
+        <div class="uk-container uk-container-large">
+          <div class="uk-grid uk-flex-middle" uk-grid>
+            <div class="uk-width-1-2@m">
+              <h1 class="uk-heading-hero uk-text-bold hero-title">
+                CI/CD & Автоматизация развертывания
+              </h1>
+              <p class="uk-text-lead uk-margin-medium-bottom">
+                Современные практики непрерывной интеграции и доставки для
+                DevOps команд
+              </p>
+              <div class="uk-flex uk-flex-wrap uk-grid-small" uk-grid>
+                <div>
+                  <a
+                    href="#tools"
+                    class="uk-button uk-button-primary uk-button-large"
+                    >Начать обучение</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="uk-width-1-2@m">
+              <picture>
+                <source srcset="../images/promo.webp" type="image/webp" />
+                <img
+                  src="https://via.placeholder.com/600x400"
+                  alt="CI/CD Pipeline схема работы"
+                  width="600"
+                  height="400"
+                  loading="eager"
+                />
+              </picture>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="features"
+        class="uk-section uk-section-muted"
+        aria-label="Ключевые возможности"
+      >
+        <div class="uk-container uk-container-large">
+          <h2 class="uk-text-center uk-heading-line uk-margin-large-bottom">
+            <span>Ключевые возможности CI/CD</span>
+          </h2>
+
+          <div class="uk-grid uk-grid-large uk-child-width-1-2@m" uk-grid>
+            <div class="feature-card">
+              <div class="uk-card uk-card-body uk-card-hover">
+                <div class="feature-icon">⚡</div>
+                <h3>Автоматическая сборка</h3>
+                <p>
+                  Автоматизация процесса сборки приложения при каждом изменении
+                  кода
+                </p>
+              </div>
+            </div>
+            <div class="feature-card">
+              <div class="uk-card uk-card-body uk-card-hover">
+                <div class="feature-icon">🧪</div>
+                <h3>Автоматическое тестирование</h3>
+                <p>
+                  Запуск юнит, интеграционных и E2E тестов в изолированной среде
+                </p>
+              </div>
+            </div>
+            <div class="feature-card">
+              <div class="uk-card uk-card-body uk-card-hover">
+                <div class="feature-icon">🚀</div>
+                <h3>Непрерывная доставка</h3>
+                <p>Автоматический деплой в staging и production окружения</p>
+              </div>
+            </div>
+            <div class="feature-card">
+              <div class="uk-card uk-card-body uk-card-hover">
+                <div class="feature-icon">📊</div>
+                <h3>Мониторинг и логи</h3>
+                <p>Сбор метрик и централизованное логирование всех этапов</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="pipeline"
+        class="uk-section"
+        aria-label="Этапы CI/CD пайплайна"
+      >
+        <div class="uk-container uk-container-large">
+          <h2 class="uk-text-center uk-heading-line uk-margin-large-bottom">
+            <span>Этапы CI/CD Pipeline</span>
+          </h2>
+
+          <div class="pipeline-grid">
+            <div class="pipeline-node">📝 Commit</div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-node">🔨 Build</div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-node">🧪 Test</div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-node">📦 Package</div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-node">🚀 Deploy</div>
+          </div>
+          <div class="uk-margin-xlarge-top">
+            <h3 class="uk-text-center">
+              Сравнение популярных CI/CD инструментов
+            </h3>
+
+            <div
+              class="table-responsive"
+              style="overflow-x: auto; -webkit-overflow-scrolling: touch"
+            >
+              <table
+                class="uk-table uk-table-striped uk-table-hover"
+                aria-label="Сравнение CI/CD инструментов"
+              >
+                <thead>
+                  <tr>
+                    <th>Инструмент</th>
+                    <th>Тип</th>
+                    <th>Конфигурация</th>
+                    <th>Облачное решение</th>
+                    <th>Self-hosted</th>
+                    <th>GitLab интеграция</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="Инструмент">
+                      <strong>GitHub Actions</strong>
+                    </td>
+                    <td data-label="Тип">SaaS</td>
+                    <td data-label="Конфигурация">YAML</td>
+                    <td data-label="Облачное решение">✅</td>
+                    <td data-label="Self-hosted">✅ (GHES)</td>
+                    <td data-label="GitLab интеграция">✅</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Инструмент"><strong>GitLab CI</strong></td>
+                    <td data-label="Тип">Integrated</td>
+                    <td data-label="Конфигурация">YAML</td>
+                    <td data-label="Облачное решение">✅</td>
+                    <td data-label="Self-hosted">✅</td>
+                    <td data-label="GitLab интеграция">✅</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Инструмент"><strong>Jenkins</strong></td>
+                    <td data-label="Тип">Self-hosted</td>
+                    <td data-label="Конфигурация">Groovy DSL</td>
+                    <td data-label="Облачное решение">❌</td>
+                    <td data-label="Self-hosted">✅</td>
+                    <td data-label="GitLab интеграция">✅ (Plugin)</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Инструмент"><strong>ArgoCD</strong></td>
+                    <td data-label="Тип">GitOps</td>
+                    <td data-label="Конфигурация">K8s Manifests</td>
+                    <td data-label="Облачное решение">❌</td>
+                    <td data-label="Self-hosted">✅</td>
+                    <td data-label="GitLab интеграция">✅</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="uk-section uk-section-muted"
+        aria-label="Видео демонстрация"
+      >
+        <div class="uk-container uk-container-large">
+          <div class="uk-grid uk-flex-middle" uk-grid>
+            <div class="uk-width-1-2@m">
+              <h2>Как работает CI/CD</h2>
+              <p class="uk-text-lead">
+                Посмотрите видео о внедрении CI/CD пайплайнов в реальном проекте
+              </p>
+              <ul class="uk-list uk-list-check">
+                <li>Настройка GitHub Actions с нуля</li>
+                <li>Автоматическое тестирование и сборка</li>
+                <li>Деплой в Kubernetes через ArgoCD</li>
+              </ul>
+            </div>
+            <div class="uk-width-1-2@m">
+              <div
+                class="uk-cover-container uk-height-medium uk-border-rounded"
+              >
+                <iframe
+                  src="https://www.youtube.com/embed/watch?v=OpOqz8NAKDo&time_continue=1&source_ve_path=MjM4NTE&embeds_referring_euri=https%3A%2F%2Fwww.google.com%2Fsearch%3Fq%3Dyt%2Bci%2Bcd%26oq%3Dyt%2Bci%2Bcd%26gs_lcrp%3DEgZjaHJvbWUyBggAEEUYOTIICAEQABgWGB4yCAgCEAAYFhgeMggIAxAAGBYYHjIICAQ"
+                  title="CI/CD Pipeline Demo Video"
+                  frameborder="0"
+                  loading="lazy"
+                  allowfullscreen
+                  class="uk-width-1-1 uk-height-1-1"
+                >
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Форма подписки в aside стиле -->
+      <aside class="uk-section" aria-label="Форма подписки на новости">
+        <div class="uk-container uk-container-small">
+          <div
+            class="uk-card uk-card-default uk-card-body uk-text-center subscription-card"
+          >
+            <h3>Подпишитесь на новости DevOps</h3>
+            <p>
+              Получайте актуальные статьи о CI/CD и автоматизации развертывания
+            </p>
+
+            <form
+              id="subscriptionForm"
+              class="uk-grid-small uk-flex-center"
+              uk-grid
+            >
+              <div class="uk-width-1-2@m">
+                <input
+                  type="email"
+                  class="uk-input"
+                  id="email"
+                  placeholder="Ваш email"
+                  required
+                  aria-label="Email для подписки"
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                />
+              </div>
+              <div class="uk-width-auto">
+                <button type="submit" class="uk-button uk-button-primary">
+                  Подписаться
+                </button>
+              </div>
+            </form>
+            <div
+              id="formMessage"
+              class="uk-margin-top"
+              role="status"
+              aria-live="polite"
+            ></div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="uk-section uk-section-secondary uk-padding-small"
+      role="contentinfo"
+    >
+      <div class="uk-container uk-container-large">
+        <div class="uk-grid uk-grid-large" uk-grid>
+          <div class="uk-width-1-3@m">
+            <h4>CI/CD Platform</h4>
+            <p>
+              Образовательная платформа для изучения DevOps практик и
+              автоматизации развертывания
+            </p>
+            <p>© 2026 CI/CD Platform. Все права защищены.</p>
+          </div>
+          <div class="uk-width-1-3@m">
+            <h4>Навигация</h4>
+            <ul class="uk-list">
+              <li><a href="index.html">Главная</a></li>
+              <li><a href="tools.html">Инструменты</a></li>
+              <li><a href="#features">Возможности</a></li>
+              <li><a href="#pipeline">Pipeline</a></li>
+            </ul>
+          </div>
+          <div class="uk-width-1-3@m">
+            <h4>Контакты</h4>
+            <ul class="uk-list">
+              <li>Email: info@cicd-platform.com</li>
+              <li>Telegram: @cicd_platform</li>
+              <li>GitHub: /cicd-platform</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

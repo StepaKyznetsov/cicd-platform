@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Этапы CI/CD пайплайна: от коммита до продакшена"
+    />
+    <title>CI/CD Pipeline | Этапы автоматизации</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.20.2/dist/css/uikit.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.20.2/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.20.2/dist/js/uikit-icons.min.js"></script>
+    <script src="../js/main.min.js"></script>
+  </head>
+  <body>
+    <header class="uk-header" role="banner">
+      <nav
+        class="uk-navbar-container uk-navbar-transparent"
+        uk-navbar
+        role="navigation"
+        aria-label="Главная навигация"
+      >
+        <div
+          class="uk-container uk-grid uk-flex-middle uk-container-large"
+          style="margin: 0 auto"
+        >
+          <div class="uk-navbar-left">
+            <a
+              href="../index.html"
+              class="uk-navbar-item uk-logo"
+              aria-label="На главную"
+            >
+              <span class="uk-margin-small-left uk-text-bold"
+                >CI/CD Platform</span
+              >
+            </a>
+          </div>
+
+          <div class="uk-navbar-right uk-visible@m">
+            <ul class="uk-navbar-nav">
+              <li><a href="../index.html">Главная</a></li>
+              <li><a href="./tools.html">Инструменты</a></li>
+              <li><a href="./features.html">Возможности</a></li>
+              <li class="uk-active"><a href="./pipeline.html">Pipeline</a></li>
+              <li><a href="./contacts.html">Контакты</a></li>
+            </ul>
+
+            <button
+              class="uk-button uk-button-default uk-margin-left theme-toggle"
+              aria-label="Переключить тему"
+              aria-pressed="false"
+            >
+              <span class="theme-icon">🌙</span>
+            </button>
+          </div>
+
+          <div class="uk-navbar-right uk-hidden@m">
+            <button
+              class="uk-button uk-button-default theme-toggle-mobile"
+              aria-label="Переключить тему"
+            >
+              <span class="theme-icon">🌙</span>
+            </button>
+
+            <a
+              href="#mobile-menu"
+              class="uk-navbar-toggle"
+              uk-navbar-toggle-icon
+              uk-toggle
+              aria-label="Открыть меню"
+            ></a>
+          </div>
+        </div>
+      </nav>
+
+      <div
+        id="mobile-menu"
+        uk-offcanvas="overlay: true"
+        role="dialog"
+        aria-label="Мобильное меню"
+      >
+        <div class="uk-offcanvas-bar">
+          <button
+            class="uk-offcanvas-close"
+            type="button"
+            uk-close
+            aria-label="Закрыть меню"
+          ></button>
+          <ul class="uk-nav uk-nav-default">
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="./tools.html">Инструменты</a></li>
+            <li><a href="./features.html">Возможности</a></li>
+            <li class="uk-active"><a href="./pipeline.html">Pipeline</a></li>
+            <li><a href="./contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main role="main">
+      <section
+        class="uk-section uk-section-muted"
+        aria-label="Заголовок страницы"
+      >
+        <div class="uk-container uk-container-large">
+          <h1 class="uk-heading-divider">CI/CD Pipeline</h1>
+          <p class="uk-text-lead">
+            Полный цикл автоматизации: от коммита до продакшена
+          </p>
+        </div>
+      </section>
+
+      <section class="uk-section" aria-label="Схема пайплайна">
+        <div class="uk-container uk-container-large">
+          <h2 class="uk-text-center uk-heading-line uk-margin-large-bottom">
+            <span>Этапы пайплайна</span>
+          </h2>
+
+          <div class="pipeline-steps">
+            <div class="pipeline-step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h3>📝 Commit & Push</h3>
+                <p>Разработчик пушит код в репозиторий</p>
+                <div class="step-details">
+                  <span class="uk-badge primary-text-color">git push</span>
+                  <span class="uk-badge primary-text-color">commit</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pipeline-step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h3>🔨 Build</h3>
+                <p>Автоматическая сборка приложения</p>
+                <div class="step-details">
+                  <span class="uk-badge primary-text-color">npm build</span>
+                  <span class="uk-badge primary-text-color">docker build</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pipeline-step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h3>🧪 Test</h3>
+                <p>Запуск всех типов тестов</p>
+                <div class="step-details">
+                  <span class="uk-badge primary-text-color">unit tests</span>
+                  <span class="uk-badge primary-text-color">integration</span>
+                  <span class="uk-badge primary-text-color">e2e</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pipeline-step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h3>📦 Package</h3>
+                <p>Упаковка и версионирование</p>
+                <div class="step-details">
+                  <span class="uk-badge primary-text-color">docker push</span>
+                  <span class="uk-badge primary-text-color">versioning</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pipeline-step">
+              <div class="step-number">5</div>
+              <div class="step-content">
+                <h3>🚀 Deploy</h3>
+                <p>Развертывание на окружениях</p>
+                <div class="step-details">
+                  <span class="uk-badge primary-text-color">staging</span>
+                  <span class="uk-badge primary-text-color">production</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="uk-section uk-section-muted"
+        aria-label="Пример конфигурации"
+      >
+        <div class="uk-container uk-container-large">
+          <h2 class="uk-text-center uk-heading-line uk-margin-large-bottom">
+            <span>Пример GitHub Actions конфигурации</span>
+          </h2>
+
+          <div class="uk-card uk-card-default uk-card-body">
+            <pre
+              class="uk-background-muted uk-padding-small"
+              style="overflow-x: auto"
+            >
+<code>name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  NODE_VERSION: '18'
+  DOCKER_IMAGE: 'myapp'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Run tests
+        run: npm test
+        
+      - name: Build application
+        run: npm run build
+        
+  docker:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Docker image
+        run: docker build -t ${{ env.DOCKER_IMAGE }} .
+        
+      - name: Push to registry
+        run: docker push ${{ env.DOCKER_IMAGE }}
+        
+  deploy:
+    needs: docker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to production
+        run: kubectl apply -f k8s/</code>
+                </pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="uk-section" aria-label="Лучшие практики">
+        <div class="uk-container uk-container-large">
+          <h2 class="uk-text-center uk-heading-line uk-margin-large-bottom">
+            <span>Лучшие практики CI/CD</span>
+          </h2>
+
+          <div
+            class="uk-grid uk-grid-large uk-child-width-1-1 uk-child-width-1-2@m"
+            uk-grid
+          >
+            <div>
+              <div class="uk-card uk-card-body best-practice-card">
+                <h3>✅ Держите пайплайн быстрым</h3>
+                <p>
+                  Каждый этап не должен занимать более 10 минут. Используйте
+                  кэширование и параллельные задачи.
+                </p>
+              </div>
+            </div>
+            <div>
+              <div class="uk-card uk-card-body best-practice-card">
+                <h3>✅ Используйте проверки безопасности</h3>
+                <p>
+                  Интегрируйте SAST, DAST и сканирование зависимостей на ранних
+                  этапах.
+                </p>
+              </div>
+            </div>
+            <div>
+              <div class="uk-card uk-card-body best-practice-card">
+                <h3>✅ Внедрите автоматический откат</h3>
+                <p>
+                  При сбое деплоя автоматически откатывайтесь к предыдущей
+                  стабильной версии.
+                </p>
+              </div>
+            </div>
+            <div>
+              <div class="uk-card uk-card-body best-practice-card">
+                <h3>✅ Логируйте всё</h3>
+                <p>
+                  Централизованное логирование всех этапов для быстрой отладки
+                  проблем.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="uk-section uk-section-secondary uk-padding-small"
+      role="contentinfo"
+    >
+      <div class="uk-container uk-container-large">
+        <div class="uk-grid uk-grid-large" uk-grid>
+          <div class="uk-width-1-3@m">
+            <h4>CI/CD Platform</h4>
+            <p>© 2024 CI/CD Platform. Все права защищены.</p>
+          </div>
+          <div class="uk-width-1-3@m">
+            <h4>Навигация</h4>
+            <ul class="uk-list">
+              <li><a href="index.html">Главная</a></li>
+              <li><a href="tools.html">Инструменты</a></li>
+              <li><a href="features.html">Возможности</a></li>
+              <li><a href="pipeline.html">Pipeline</a></li>
+              <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="uk-width-1-3@m">
+            <h4>Ресурсы</h4>
+            <ul class="uk-list">
+              <li><a href="#">Документация</a></li>
+              <li><a href="#">Блог</a></li>
+              <li><a href="#">Видеоуроки</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

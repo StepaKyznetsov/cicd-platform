@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Инструменты CI/CD: GitHub Actions, GitLab CI, Jenkins, ArgoCD - подробное описание и примеры"
+    />
+    <title>
+      Инструменты CI/CD | GitHub Actions, GitLab CI, Jenkins, ArgoCD
+    </title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.20.2/dist/css/uikit.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.20.2/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.20.2/dist/js/uikit-icons.min.js"></script>
+    <script src="../js/main.min.js"></script>
+  </head>
+  <body>
+    <header class="uk-header" role="banner">
+      <nav
+        class="uk-navbar-container uk-navbar-transparent"
+        uk-navbar
+        role="navigation"
+        aria-label="Главная навигация"
+      >
+        <div
+          class="uk-container uk-grid uk-flex-middle uk-container-large"
+          style="margin: 0 auto"
+        >
+          <div class="uk-navbar-left">
+            <a
+              href="../index.html"
+              class="uk-navbar-item uk-logo"
+              aria-label="На главную"
+            >
+              <span class="uk-margin-small-left uk-text-bold"
+                >CI/CD Platform</span
+              >
+            </a>
+          </div>
+
+          <div class="uk-navbar-right uk-visible@m">
+            <ul class="uk-navbar-nav">
+              <li><a href="../index.html">Главная</a></li>
+              <li class="uk-active"><a href="./tools.html">Инструменты</a></li>
+              <li><a href="./features.html">Возможности</a></li>
+              <li><a href="./pipeline.html">Pipeline</a></li>
+              <li><a href="./contacts.html">Контакты</a></li>
+            </ul>
+
+            <button
+              class="uk-button uk-button-default uk-margin-left theme-toggle"
+              aria-label="Переключить тему"
+              aria-pressed="false"
+            >
+              <span class="theme-icon">🌙</span>
+            </button>
+          </div>
+
+          <div class="uk-navbar-right uk-hidden@m">
+            <button
+              class="uk-button uk-button-default theme-toggle-mobile"
+              aria-label="Переключить тему"
+            >
+              <span class="theme-icon">🌙</span>
+            </button>
+
+            <a
+              href="#mobile-menu"
+              class="uk-navbar-toggle"
+              uk-navbar-toggle-icon
+              uk-toggle
+              aria-label="Открыть меню"
+            ></a>
+          </div>
+        </div>
+      </nav>
+
+      <div
+        id="mobile-menu"
+        uk-offcanvas="overlay: true"
+        role="dialog"
+        aria-label="Мобильное меню"
+      >
+        <div class="uk-offcanvas-bar">
+          <button
+            class="uk-offcanvas-close"
+            type="button"
+            uk-close
+            aria-label="Закрыть меню"
+          ></button>
+          <ul class="uk-nav uk-nav-default">
+            <li><a href="../index.html">Главная</a></li>
+            <li class="uk-active"><a href="./tools.html">Инструменты</a></li>
+            <li><a href="./features.html">Возможности</a></li>
+            <li><a href="./pipeline.html">Pipeline</a></li>
+            <li><a href="./contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main role="main">
+      <section class="uk-section">
+        <div class="uk-container uk-container-large">
+          <h1 class="uk-heading-divider">Инструменты CI/CD</h1>
+          <p class="uk-text-lead">
+            Обзор популярных инструментов для непрерывной интеграции и доставки
+          </p>
+
+          <div
+            class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@m uk-margin-large"
+            uk-grid
+          >
+            <div
+              class="uk-margin-auto uk-card-media-left uk-cover-container uk-grid uk-flex-middle uk-flex-center"
+            >
+              <picture class="uk-padding-small">
+                <source
+                  srcset="../images/github-actions.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="https://via.placeholder.com/400x300"
+                  alt="GitHub Actions логотип"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+            <div>
+              <div class="uk-card-body">
+                <h2>GitHub Actions</h2>
+                <p>
+                  GitHub Actions — это платформа CI/CD, которая позволяет
+                  автоматизировать сборку, тестирование и развертывание прямо в
+                  репозиториях GitHub.
+                </p>
+
+                <h3>Ключевые особенности:</h3>
+                <ul>
+                  <li>Нативная интеграция с GitHub</li>
+                  <li>Бесплатные минуты для публичных репозиториев</li>
+                  <li>Более 10,000 готовых actions</li>
+                  <li>Поддержка матричных сборок</li>
+                </ul>
+
+                <pre class="uk-background-muted uk-padding-small"><code>
+name: CI/CD Pipeline
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm install && npm test
+                        </code></pre>
+
+                <a href="#" class="uk-button uk-button-primary">Подробнее</a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@m uk-margin-large"
+            uk-grid
+          >
+            <div
+              class="uk-margin-auto uk-card-media-right uk-cover-container uk-grid uk-flex-middle uk-flex-center"
+            >
+              <picture class="uk-padding-small">
+                <source srcset="../images/gitlab-ci.webp" type="image/webp" />
+                <img
+                  src="https://via.placeholder.com/400x300"
+                  alt="GitLab CI логотип"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+            <div class="uk-flex-last@m">
+              <div class="uk-card-body">
+                <h2>GitLab CI</h2>
+                <p>
+                  GitLab CI — встроенная CI/CD платформа в GitLab, предлагающая
+                  полный DevOps цикл в одном приложении.
+                </p>
+
+                <h3>Ключевые особенности:</h3>
+                <ul>
+                  <li>Встроенный менеджмент окружений</li>
+                  <li>Автоматические review приложения</li>
+                  <li>Поддержка Kubernetes</li>
+                  <li>GitOps подход через CI/CD</li>
+                </ul>
+
+                <pre class="uk-background-muted uk-padding-small"><code>
+stages:
+  - build
+  - test
+  - deploy
+
+build_job:
+  stage: build
+  script:
+    - docker build -t app .
+                        </code></pre>
+
+                <a href="#" class="uk-button uk-button-primary">Подробнее</a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@m uk-margin-large"
+            uk-grid
+          >
+            <div
+              class="uk-margin-auto uk-card-media-left uk-cover-container uk-grid uk-flex-middle uk-flex-center"
+            >
+              <picture class="uk-padding-small">
+                <source srcset="../images/jenkins.webp" type="image/webp" />
+                <img
+                  src="https://via.placeholder.com/400x300"
+                  alt="Jenkins логотип"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+            <div>
+              <div class="uk-card-body">
+                <h2>Jenkins</h2>
+                <p>
+                  Jenkins — самый популярный open-source сервер автоматизации с
+                  огромным количеством плагинов.
+                </p>
+
+                <h3>Ключевые особенности:</h3>
+                <ul>
+                  <li>Более 1,800 плагинов для интеграций</li>
+                  <li>Гибкая система конфигурации через Groovy</li>
+                  <li>Распределенные сборки через агентов</li>
+                  <li>Pipeline as Code (Jenkinsfile)</li>
+                </ul>
+
+                <pre class="uk-background-muted uk-padding-small"><code>
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'make build'
+            }
+        }
+    }
+}
+                        </code></pre>
+
+                <a href="#" class="uk-button uk-button-primary">Подробнее</a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@m uk-margin-large"
+            uk-grid
+          >
+            <div
+              class="uk-margin-auto uk-card-media-right uk-cover-container uk-grid uk-flex-middle uk-flex-center"
+            >
+              <picture class="uk-padding-small">
+                <source srcset="../images/argocd.webp" type="image/webp" />
+                <img
+                  src="https://via.placeholder.com/400x300"
+                  alt="ArgoCD логотип"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+            <div class="uk-flex-last@m">
+              <div class="uk-card-body">
+                <h2>ArgoCD</h2>
+                <p>
+                  ArgoCD — декларативный инструмент GitOps для непрерывной
+                  доставки приложений в Kubernetes.
+                </p>
+
+                <h3>Ключевые особенности:</h3>
+                <ul>
+                  <li>Автоматическая синхронизация с Git</li>
+                  <li>Визуальный интерфейс управления</li>
+                  <li>Поддержка множества Kubernetes конфигураций</li>
+                  <li>SSO интеграция и RBAC</li>
+                </ul>
+
+                <pre class="uk-background-muted uk-padding-small"><code>
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-app
+spec:
+  source:
+    repoURL: https://github.com/myorg/myapp
+    path: k8s/overlays/production
+  destination:
+    server: https://kubernetes.default.svc
+                        </code></pre>
+
+                <a href="#" class="uk-button uk-button-primary">Подробнее</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="uk-section uk-section-secondary uk-padding-small"
+      role="contentinfo"
+    >
+      <div class="uk-container uk-container-large">
+        <div class="uk-grid uk-grid-large" uk-grid>
+          <div class="uk-width-1-3@m">
+            <h4>CI/CD Platform</h4>
+            <p>
+              Образовательная платформа для изучения DevOps практик и
+              автоматизации развертывания
+            </p>
+            <p>© 2026 CI/CD Platform. Все права защищены.</p>
+          </div>
+          <div class="uk-width-1-3@m">
+            <h4>Навигация</h4>
+            <ul class="uk-list">
+              <li><a href="index.html">Главная</a></li>
+              <li><a href="tools.html">Инструменты</a></li>
+            </ul>
+          </div>
+          <div class="uk-width-1-3@m">
+            <h4>Контакты</h4>
+            <ul class="uk-list">
+              <li>Email: info@cicd-platform.com</li>
+              <li>Telegram: @cicd_platform</li>
+              <li>GitHub: /cicd-platform</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

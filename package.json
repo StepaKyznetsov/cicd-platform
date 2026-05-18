@@ -1,0 +1,26 @@
+{
+  "name": "cicd-platform",
+  "version": "0.0.0",
+  "description": "CI/CD Platform - образовательная платформа для изучения CI/CD и автоматизации развертывания",
+  "main": "index.html",
+  "scripts": {
+    "minify-css": "cleancss -o css/style.min.css css/style.css",
+    "minify-js": "uglifyjs js/main.js --compress --mangle -o js/main.min.js",
+    "build": "npm run minify-css && npm run minify-js",
+    "watch": "onchange 'css/*.css' 'js/*.js' -- npm run build",
+    "serve": "live-server --port=8080",
+    "dev": "npm run build && concurrently \"npm run watch\" \"npm run serve\"",
+    "deploy": "npm run build && gh-pages -d .",
+    "clean": "rm -f css/style.min.css js/main.min.js",
+    "rebuild": "npm run clean && npm run build"
+  },
+  "homepage": "https://your-username.github.io/cicd-platform/",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.2",
+    "uglify-js": "^3.17.4",
+    "live-server": "^1.2.2",
+    "onchange": "^7.1.0",
+    "concurrently": "^8.2.0",
+    "gh-pages": "^5.0.0"
+  }
+}
